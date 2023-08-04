@@ -1,0 +1,25 @@
+{
+	"name": "zenetexchange",
+	"dockerComposeFile": [
+		"../docker-compose.dev.yml"
+	],
+	"service": "api",
+	"workspaceFolder": "/app",
+	// "workspaceFolder": "/home/django/app",
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"ms-python.python",
+				"ms-python.vscode-pylance",
+				"ms-python.pylint",
+				"ms-python.black-formatter",
+				"ms-python.isort",
+				"batisteo.vscode-django",
+				"eamodio.gitlens",
+				"acheronfail.arithmetic",
+				"GitHub.copilot"
+			]
+		}
+	},
+	"postStartCommand": "git config --global --add safe.directory /app"
+}

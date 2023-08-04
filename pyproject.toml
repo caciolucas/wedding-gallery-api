@@ -1,0 +1,24 @@
+[tool.poetry]
+name = "wedding-gallery"
+version = "0.1.0"
+description = ""
+authors = ["Cácio Lucas <cclucas060901@gmail.com>"]
+readme = "README.md"
+packages = [{include = "wedding_gallery"}]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+djangorestframework = "^3.14.0"
+django-cors-headers = "^4.2.0"
+python-decouple = "^3.8"
+psycopg2 = "^2.9.6"
+psycopg2-binary = "^2.9.6"
+dj-database-url = "^2.0.0"
+djangorestframework-simplejwt = "^5.2.2"
+pillow = "^10.0.0"
+gunicorn = "^21.2.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
