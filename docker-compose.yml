@@ -9,7 +9,6 @@ services:
     container_name: wedding-gallery-api
     volumes:
       - .:/home/django/app
-      - statics:/home/django/app/static
     ports:
       - "8000:8000"
     depends_on:
@@ -25,7 +24,3 @@ services:
       - POSTGRES_PASSWORD=postgres
     volumes:
       - ./.docker/.pgdata:/var/lib/postgresql/data
-
-volumes:
-  statics:
-    driver: local
