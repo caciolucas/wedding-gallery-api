@@ -1,5 +1,5 @@
 {
-	"name": "zenetexchange",
+	"name": "wedding-gallery",
 	"dockerComposeFile": [
 		"../docker-compose.dev.yml"
 	],
