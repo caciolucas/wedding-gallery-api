@@ -94,6 +94,7 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'wedding_gallery.wsgi.application'
 
+FORCE_SCRIPT_NAME = config('FORCE_SCRIPT_NAME', default='')
 
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
