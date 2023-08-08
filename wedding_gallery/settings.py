@@ -28,13 +28,15 @@ sys.path.insert(0, os.path.join(PROJECT_ROOT, "apps"))
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-+yxa-@6qwtzznmxbt3hgf55g3$(p3o5m)-ii-p7@h+m83%-^gi'
 
-# SECURITY WARNING: don't run with debug turned on in production!
+SECRET_KEY = config("SECRET_KEY", "!!!!!!!INSECURE KEY!!!!!!!")
+DEBUG = config("DEBUG", default=False, cast=bool)
+# SECURITY WARNING: don't run with debug turned on in producAdition!
 DEBUG = True
-
 ALLOWED_HOSTS = config('ALLOWED_HOSTS', default='*', cast=lambda v: [s.strip() for s in v.split(',')])
-
+CORS_ALLOW_ALL_ORIGINS = True
+CORS_ORIGIN_ALLOW_ALL = True
+CSRF_TRUSTED_ORIGINS = ALLOWED_HOSTS
 
 # Application definition
 
@@ -60,8 +62,6 @@ LOCAL_APPS = [
 ]
 
 INSTALLED_APPS = DEFAULT_APPS + EXTERNAL_APPS + LOCAL_APPS
-
-CORS_ALLOW_ALL_ORIGINS = True
 
 MIDDLEWARE = [
     "corsheaders.middleware.CorsMiddleware",
