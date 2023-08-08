@@ -1,13 +1,13 @@
-from rest_framework.viewsets import ModelViewSet
-from rest_framework.response import Response
-from rest_framework import status
-
-from core.serializers import PictureSerializer
 from core.models import Picture
+from core.serializers import PictureSerializer
+from rest_framework import status
+from rest_framework.response import Response
+from rest_framework.viewsets import ModelViewSet
 
 
 class PictureViewSet(ModelViewSet):
     serializer_class = PictureSerializer
+    filterset_fields = ['approved']
 
     def get_queryset(self):
         if self.request.user.is_authenticated:

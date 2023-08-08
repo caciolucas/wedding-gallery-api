@@ -50,6 +50,7 @@ DEFAULT_APPS = [
 EXTERNAL_APPS = [
     "rest_framework",
     "corsheaders",
+    "django_filters",
 ]
 
 LOCAL_APPS = [
@@ -157,6 +158,7 @@ REST_FRAMEWORK = {
         'rest_framework.authentication.SessionAuthentication',
         'rest_framework_simplejwt.authentication.JWTAuthentication',
     ),
+    'DEFAULT_FILTER_BACKENDS': ['django_filters.rest_framework.DjangoFilterBackend']
 }
 
 # Simple JWT
